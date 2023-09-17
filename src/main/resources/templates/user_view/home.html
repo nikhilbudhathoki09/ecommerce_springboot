@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th ="http://www.thymeleaf.org"  th:replace="user_view/base::Layout(~{::div})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  
+
+    <div class="new-product">
+        <div id="slider" style="text-align: center;">
+            <img  id="image">
+        </div>
+        
+    </div> 
+
+    <div class="header">
+        <div class="product-type">
+            <p>
+            <b>New Arrivals</b>
+            </p>
+        </div>
+    
+    </div>
+    <div class="products">
+        <div class="product-design">
+            <img src="https://media.istockphoto.com/id/499691844/photo/gray-sweatpants-isolated.jpg?s=612x612&w=0&k=20&c=Uw_BoK3YAujo0g2seid2fb1jHSG3Fy0yKSn2ufwN7L8=" alt="">
+            <h3>Drop Crotch Joggers</h3>
+            <p>Joggers</p>
+            <h4>Rs. 1200</h4>
+        </div>
+
+        <div class="product-design">
+            <img src="https://t3.ftcdn.net/jpg/03/29/42/80/360_F_329428044_moJE1F5e98gv4iOGQOnRb9LhwMIf9PWl.jpg" alt="">
+            <h3>Denim Jackets</h3>
+            <p>Jackets</p>
+            <h4>Rs. 5500</h4>
+        </div>
+
+            <div class="product-design">
+            <img src="https://media.istockphoto.com/id/1365757342/photo/black-cargo-pants-isolated-on-white-background.jpg?b=1&s=170667a&w=0&k=20&c=DnubMu4Fhmw58c37bhE4llDx0hV1QRrPbk0YuJRdkhw=" alt="">
+            <h3>Cargo Pants </h3>
+            <p>Pants</p>
+            <h4>Rs. 3200</h4>
+            
+        </div>
+    
+    </div>
+    <div class="header">
+        <div class="product-type"><p>
+            <b>Nike Essentials</b></p>
+        </div>
+    </div>
+
+        <div class="products">
+        <div class="product-design">
+            <a href="${pageContext.request.contextPath}/ViewProducts?displayMen=1"><img src="https://s3.amazonaws.com/media-ima002.globaltalentsystems.com/2595/800/2595_640142-444-8-25-2022-1648857706727.jpg" alt="Men" style="height:500px"></a>
+            <h4>Male</h4>
+        </div>
+
+        <div class="product-design">
+        <a href="${pageContext.request.contextPath}/ViewProducts?displayWomen=2">
+            <img src="https://media.shilpaahuja.com/wp-content/uploads/2020/09/famous-fashion-model-karlie-kloss-project-runway.jpg" alt="Women" style="height:500px"> </a>  
+            <h4>Female</h4>  
+        </div>
+
+        <div class="product-design">
+            <img src="https://images.squarespace-cdn.com/content/v1/57bafe29ff7c50e4a7ffbf67/1562840538122-JKAEZNDGU40561WZLHUX/IMG_0268_web.jpg" alt="kids" style="height:500px">
+            <h4>Kids</h4>
+        </div>
+    </div> 
+    <br>
+    <br>
+    
+    
+    <div>
+        <div class="logo-choose">
+            <p style="margin-left:15px;">
+            <b>Shop from Brands</b>
+            </p>
+        </div>
+    
+        <div class="logo">
+
+            <div class="dior">
+                <a href="${pageContext.request.contextPath}/ViewProducts?displayMen=1"><img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F67979fc2-9bc6-4ef1-a91a-9f8129c57645_1500x1500.jpeg" alt=""></a>
+                
+            </div>
+            <div class="dior">
+                <a href=""><img src="https://static.vecteezy.com/system/resources/previews/010/994/431/original/puma-logo-black-symbol-with-name-clothes-design-icon-abstract-football-illustration-with-white-background-free-vector.jpg" alt=""></a>
+                
+            </div>
+            <div class="dior">
+                <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Louis_Vuitton_logo_and_wordmark.svg/800px-Louis_Vuitton_logo_and_wordmark.svg.png" alt=""></a>
+            </div>
+            <div class="dior">
+                <a href=""><img src="https://logowik.com/content/uploads/images/adidas-new-20225326.jpg" alt=""></a>
+            </div>
+            <div class="dior">
+                <a href=""><img src="https://www.pngmart.com/files/17/Vector-Gucci-Logo-Transparent-PNG.png" alt=""></a>
+            </div>
+    </div>
+    <br>
+    <br>
+    
+    
+</body>
+</html>

@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "UPLOAD_PATH_USER",
+    "type": "java.lang.String",
+    "description": "A description for 'UPLOAD_PATH_USER'"
+  },
+  {
+    "name": "file.upload.user.path",
+    "type": "java.lang.String",
+    "description": "A description for 'file.upload.user.path'"
+  },
+  {
+    "name": "file.upload.product.path",
+    "type": "java.lang.String",
+    "description": "A description for 'file.upload.product.path'"
+  }
+]}
