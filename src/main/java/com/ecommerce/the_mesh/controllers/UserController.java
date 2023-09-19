@@ -21,7 +21,7 @@ import com.ecommerce.the_mesh.util.FileUploadHelper;
 @Controller
 @RequestMapping(path = "/users")
 public class UserController {
-
+    
     private User user = new User(); //its better to use an empty object rather than null cause it might arise a null pointter exception
 
     @Value("${file.upload.user.path}")
@@ -36,9 +36,9 @@ public UserController(FileUploadHelper fileHelper, UserService userService){
 
 @GetMapping(value = "/home")
 public String getLoginPage(Model model, HttpSession session){ 
-   User currentUser = (User)session.getAttribute("user");
-   System.out.println(currentUser);
-   model.addAttribute("user", currentUser);
+    User currentUser = (User)session.getAttribute("user");
+    System.out.println("From Home" +currentUser);
+    model.addAttribute("user", currentUser);
     return "user_view/home";
 }
 
@@ -66,9 +66,7 @@ public String handleSignupForm(@Valid @ModelAttribute User user,
         System.out.println("The user is saved sucessfully");
         return"user_view/home";
     }
-
     return "user_view/signup";
-
 }
 
 
@@ -92,11 +90,29 @@ public String handleLoginForm(@ModelAttribute("user") User user,Model model, Htt
     }   
 }
 
-
 @GetMapping("/logout")
 public String handleLogout(){
     this.user = null;
     return "redirect:/users/home";
+}
+
+@GetMapping("/profile")
+public String getProfilePage(Model model, HttpSession session){
+    this.user = (User)session.getAttribute("user");
+    model.addAttribute("user", user);
+    return"user_view/profile";
+}
+
+@PostMapping("/update_profile")
+public String updateUser(@ModelAttribute User updatedUser,
+                         @RequestParam("user_image") MultipartFile file,
+                         Model model, HttpSession session ) throws IOException{
+    user = (User)session.getAttribute("user"); //getting user from the current session
+    updatedUser.setUser_id(user.getUser_id());      //setting the user_id value from the session
+
+    this.user = this.userService.updateUser(updatedUser, file); //after it is updated
+    session.setAttribute("user", user); //updating the user in the session
+    return "redirect:/users/profile";
 }
 
 

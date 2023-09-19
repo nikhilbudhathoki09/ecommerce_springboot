@@ -22,22 +22,11 @@ public class FileUploadHelper {
 
             Files.copy(multipartFile.getInputStream(), Paths.get(fullUploadPath),StandardCopyOption.REPLACE_EXISTING);
             isUploaded = true;
-
-           
-
         }catch(Exception e){
             e.printStackTrace();
         }
-
-
-
-        return isUploaded;
-
-        
+        return isUploaded; 
     }
-
-
     
 
-    
 }
