@@ -704,11 +704,12 @@
                         <div class="session_imagediv">
                             <!-- <img class="session_image" th:src="'/images/users/'+${#ctx.session.user.image_user}"
                                 alt="Profile pic"> -->
-                                <img src="/images/util/slider1.png" class="session_image"/>
+                                <img class = "session_image" th:src="'/images/user/' + ${user.image_user}" alt="profile picture">
+                                <!-- <img src="/images/util/slider1.png" class="session_image"/> -->
                         </div>
                         <button class="profile_button" onclick="openModal()">
-                            <!-- <span th:text="${#ctx.session.user.user_name}">User names</span> -->
-                            Hello
+                            <span th:text="${user.user_name}"></span>
+                            
                             
                         </button>
                     </a>
@@ -912,20 +913,6 @@
         }
 
     </script>
-
-    <script>
-        document.getElementById("image_input").addEventListener("change", function () {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                document.getElementById("signupImage").src = e.target.result;
-            }
-            reader.readAsDataURL(this.files[0]);
-        });
-    </script>
-
-
-
-
 
 </body>
 

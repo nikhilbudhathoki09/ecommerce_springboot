@@ -36,7 +36,6 @@ public class UserService {
    
     public User validUser(String email, String password){
         User validUser = this.userRepo.checkVerifiedUser(email, password);
-
         return validUser;
     
     }
