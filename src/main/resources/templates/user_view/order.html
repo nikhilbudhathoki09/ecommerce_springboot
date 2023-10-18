@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{user_view/base::Layout(~{::div})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="big-container">
+			
+		<div class="styling">
+			<div class="small-container cart-page">
+                <h2>My orders</h2>
+				<table>
+					<div class="prd-det">
+						<tr>
+							<th>Product</th>
+							<th>Product Name</th>
+							<th>Date</th>
+							<th>Quantity</th>
+							<th style="padding-right: 20px;" colspan="2">Subtotal</th>
+						</tr>
+					</div>
+					<!-- repeated column from here -->
+					
+
+                    <tr th:each="items : ${orderedItems}">
+                        <td>
+                            <div class="cart-info">
+                                <img th:src = "@{'/images/product/'+ ${items.product.img_path1}}" alt="product_image">
+                                
+        
+                            </div>
+                        </td>
+                        <td style="width: 30%;">
+                            <div>
+                                <p th:text="${items.product.product_name}"></p>
+                                
+                                <br>
+                                
+                            </div>
+                        </td>
+                        <td th:text="${items.order.order_date}"></td>
+                        <td th:text="${items.quantity}"></td>
+                        <td style="padding-right:20px ;">Rs.
+                            <span th:text="${items.order.total_amount}"></span>
+                        </td>
+                    
+                    </tr>
+					
+
+				</table>
+			
+			
+			
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

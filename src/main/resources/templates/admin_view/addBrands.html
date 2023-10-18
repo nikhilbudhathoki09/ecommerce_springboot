@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{admin_view/base::Layout(~{::main})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <main>
+        <h1 class="title">Add Brands</h1>
+        <ul class="breadcrumbs">
+            <li><a href="#">Brands</a></li>
+            <li class="divider">/</li>
+            <li><a href="#" class="active">Add Brands</a></li>
+        </ul>
+        
+        <div class="info-data">
+        <div class="card">     
+             <div class="container">
+              <h1 class="headAdd">Add Brand</h1>
+              
+              <form th:action = "@{/admin/addBrandsProcess}" method="post" enctype="multipart/form-data">
+              
+                <label for="brand-name" class="labelAdd">Brand Name:</label>
+                <input type="text" id="brand-name" name="brand_name" >
+                
+                <label for="product-image3" class="labelAdd" style="margin-bottom: 40px;">Brand Logo:</label>
+                <input type="file" id="product-image3" name="brand_logo" />
+
+                <button type="submit" class="btnAdd">Add Brand</button>
+              </form>
+            </div>
+        </div>
+        </div> 
+        
+    </main>
+    
+</body>
+</html>

@@ -6,33 +6,33 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="signup-body">
+    <div class="signup-body">  
+      <div th:classappend="${not #strings.isEmpty(errorMessage)} ? 'alert alert-danger' : ''">
+        <p th:text="${errorMessage}"></p>
+      </div>
 
         <div class="container-sign" style="width: 26%; height: 436.5px;">
             <div class="title">Log In</div>
             <div class="content">
-                   
-                <form th:action="@{/users/login_process}" method = "post">
-                    <div class="user-details" style="flex-direction: column;">
-                      <div class="input-box">
-                        <span class="details">Email</span>
-                        <input style="width: 239%;" type="text" placeholder="Enter your email" name = "email">
-
-                        
-                      </div>
-                     
-                      <div class="input-box">
-                        <span class="details">Password</span>
-                        <input style="width: 239%;" type= "password" placeholder="Enter your password" name = "password" required>
-                      </div>
-                      <div class="button">
-                        <input class="Login-button" style="font-weight: bold;" type="submit" value="Log In">
-                      </div>
-                        <div class="existing-acc">
-                        <p>Don't have a account? <a th:href = "@{users/signup}">Register</a></p>
-                        </div>
+              <form th:action="@{/users/login_process}" method = "post">
+                <div class="user-details" style="flex-direction: column;">
+                  <div class="input-box">
+                    <span class="details">Email</span>
+                    <input style="width: 239%;" type="text" placeholder="Enter your email" name = "email">  
+                  </div>
+                  
+                  <div class="input-box">
+                    <span class="details">Password</span>
+                    <input style="width: 239%;" type= "password" placeholder="Enter your password" name = "password" required>
+                  </div>
+                  <div class="button">
+                    <input class="Login-button" style="font-weight: bold;" type="submit" value="Log In">
+                  </div>
+                    <div class="existing-acc">
+                    <p>Don't have a account? <a th:href = "@{users/signup}">Register</a></p>
                     </div>
-                </form>
+                </div>
+              </form>
                     
 
             </div>

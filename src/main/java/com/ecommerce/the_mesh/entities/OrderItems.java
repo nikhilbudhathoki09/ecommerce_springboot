@@ -1,22 +1,23 @@
 package com.ecommerce.the_mesh.entities;
 
 import java.sql.Date;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import lombok.ToString;
 
 @Entity
+@ToString
 public class OrderItems {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int order_item_id;
     private int quantity;
-    private int price;
+    private double price;
     private Date date;
 
     @ManyToOne
@@ -25,7 +26,11 @@ public class OrderItems {
 
     @ManyToOne
     @JoinColumn(name = "product_id", referencedColumnName = "product_id")
-    private Product product_id;
+    private Product product;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+    private User user;
 
     public OrderItems(){}
 
@@ -37,11 +42,11 @@ public class OrderItems {
         this.quantity = quantity;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -61,15 +66,28 @@ public class OrderItems {
         this.order = order;
     }
 
-    public Product getProduct_id() {
-        return product_id;
+    public int getOrder_item_id() {
+        return order_item_id;
     }
 
-    public void setProduct_id(Product product_id) {
-        this.product_id = product_id;
-    };
+    public void setOrder_item_id(int order_item_id) {
+        this.order_item_id = order_item_id;
+    }
 
-    
+    public Product getProduct() {
+        return product;
+    }
 
-    
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+        
 }
