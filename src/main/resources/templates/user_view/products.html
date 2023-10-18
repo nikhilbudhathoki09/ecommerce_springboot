@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xlmns:th="http://www.thymeleaf.org " th:replace="~{user_view/base::Layout(~{::div})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+	<div class="products">
+
+        <h1 style="color:black" th:text="${'All Products'}"></h1>
+
+        
+		<div class="info-data">
+			<div class="listing-section" style="width: 100%; float: left; padding: 1%; border-bottom: 0.01em solid #dddbdb;" th:if="${products != null && #lists.size(products) > 0}">
+				
+				
+				<div class="product3" style="float: left;height:fit-content;width: 23%;border-radius: 2%;margin: 1%;overflow-x: hidden;" th:each="product :${products}">
+					<a th:href = "@{'/users/product_description/' +${product.product_id}}">
+						<div class="image-box3" style="width: 370px;overflow: hidden;height:470px;">
+							<div class="images3" id="image-1"
+                            th:style="'background-image: url(' + @{'/images/product/' + ${product.img_path1}} + ');'"
+                            >
+							</div>
+						</div>
+						<div class="text-box3">
+							<h2 class="item cat3" style="color:black" th:text="${product.product_name}"></h2>
+							<h3 class="price cat3" style="color:black">
+								Rs
+								<span th:text="${product.product_price}"></span>
+							
+							<p class="quantity3">
+								in stock
+								<span th:text="${product.stock}"></span></p>
+
+						</div>
+					</a>
+					<a th:href="${#ctx.session.user!=null} ? '/users/carts/add?product_id=' + ${product.product_id} : '/users/login'"><button type="button3" name="item-1-button" id="item-1-button" style="padding: 2%;background-color: orange;border:none;width: 350px; height: 50px; border-radius: 10px;cursor:pointer">Add to Cart</button></a>
+				</div>	
+			</div>
+			<div th:unless = "${products !=null && #lists.size(products)>0}">
+				<section class="page_404">
+					<div class="container">
+					  <div class="row"> 
+					  <div class="col-sm-12 ">
+					  <div class="col-sm-10 col-sm-offset-1  text-center">
+					  <div class="four_zero_four_bg">
+						<h1 class="text-center ">404</h1>
+					  
+					  
+					  </div>
+					  
+					  <div class="contant_box_404">
+					  <h3 class="h2">No Results Found.</h3>
+					  <p>the product you are looking for  is not available!</p>
+					  
+					  <a th:href ="@{/users/home}" class="link_404">Go to Home</a>
+					</div>
+					  </div>
+					  </div>
+					  </div>
+					</div>
+				  </section>
+				  
+			</div>
+		</div>
+	</div>
+</body>
+</html>

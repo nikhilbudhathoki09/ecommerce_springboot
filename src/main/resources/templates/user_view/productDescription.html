@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xlmns:th = "http://www.thymeleaf.org" th:replace="~{user_view/base::Layout(~{::div})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class = "sucess">
+        <h1>Product Description Page</h1>
+    </div>
+
+    <div class = "details" >
+        <p th:text="${product.product_name}"></p>
+        <p th:text="${product.stock}"></p>
+
+    </div>
+    
+</body>
+</html>

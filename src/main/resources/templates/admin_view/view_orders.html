@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{admin_view/base::Layout(~{::main})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1 class="title">Orders</h1>
+        <ul class="breadcrumbs">
+            <li><a href="#" class="active">All Orders</a></li>
+        </ul>
+        
+        <div class="info-data">
+                <div class="card">
+                    <div class="head">
+                        <h2>Orders</h2>
+                    </div>
+                    
+                    <div class="orders-listContainer">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order Id</th>
+                                <th>Customer Name</th>
+                                <th>Order Date</th>
+                                <th>Total Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                    <tr th:each="item : ${orders}">
+                        <td th:text="${item.order_id}"></td>
+                        <td th:text="${item.user.user_name}"></td>
+                        <td th:text="${item.order_date}"></td>
+                        <td >Rs
+                            <span th:text="${item.total_amount}"></span>
+                        </td>
+                    </tr>
+
+                
+                
+                        </tbody>
+                    </table>
+                    </div>
+                    
+                </div>
+            </div>          
+    </main>
+    <!-- MAIN -->
+    
+</body>
+</html>

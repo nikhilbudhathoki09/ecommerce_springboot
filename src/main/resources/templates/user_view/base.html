@@ -276,6 +276,7 @@
             width: 100%;
             font-size: 12px;
             color: Grey;
+            text-transform: lowercase;
         }
 
         .item3,
@@ -668,6 +669,35 @@
         .input-alert {
             border: 2px solid red;
         }
+
+        .page_404{ padding:40px 0; background:#fff; font-family: 'Arvo', serif;
+        }
+
+    .page_404  img{ width:100%;}
+
+    .four_zero_four_bg{
+    
+    background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+        height: 400px;
+        background-position: center;
+    }
+    
+    
+    .four_zero_four_bg h1{
+    font-size:80px;
+    }
+    
+    .four_zero_four_bg h3{
+        font-size:80px;
+        }
+        
+        .link_404{      
+    color: #fff!important;
+        padding: 10px 20px;
+        background: #39ac31;
+        margin: 20px 0;
+        display: inline-block;}
+    .contant_box_404{ margin-top:-50px;}
     </style>
 
 </head>
@@ -688,7 +718,7 @@
                     <ul class="nav-linkshamro">
                         <li><a th:href="@{/users/home}">Home</a></li>
                         <li><a th:href="@{/users/products}">Products</a></li>
-                        <li><a th:href="@{/users/carts}">Carts</a></li>
+                        <li><a th:href="@{/users/carts/view}">Carts</a></li>
                         <li><a th:href="@{/users/orders}">Orders</a></li>
                         <li><a th:href="@{/users/profile}">Profile</a></li>
 
@@ -703,7 +733,7 @@
                     <a th:href="@{/users/profile}">
                         <div class="session_imagediv">
                                 <img class = "session_image" th:src="'/images/user/' + ${user.image_user}" alt="profile picture">
-                                <!-- <img src="/images/util/slider1.png" class="session_image"/> -->
+                                
                         </div>
                         <button class="profile_button" onclick="openModal()">
                             <span th:text="${user.user_name}"></span>
@@ -717,17 +747,17 @@
             </header>
             <div class="nav-linkshamro" style="position: absolute; left: 200px; top: 100px;">
                 <ul class="main-menu">
-                    <li><a th:href="@{/products/Men}" style="color: black;">Men</a>
+                    <li><a th:href="@{/users/products/Men}" style="color: black;">Men</a>
                     </li>
 
-                    <li><a th:href="@{/products/Women}" style="color: black;">Women</a>
+                    <li><a th:href="@{/users/products/Women}" style="color: black;">Women</a>
                     </li>
 
                 </ul>
             </div>
 
             <div class="search-box">
-                <form action="" method="get" id="myForm"
+                <form th:action="@{/users/products/}" method="get" id="myForm"
                     style=" width: 500px;position: relative;display: flex;bottom: 0;left: 0;right: 0;margin: 20px auto;">
 
                     <input class="search-input" type="text" placeholder="Search for your products" name="productName"
@@ -753,7 +783,7 @@
 
                     <ul class="nav-linkshamro">
                         <li><a th:href="@{/users/home}">Home</a></li>
-                        <li><a th:href="@{/products}">Products</a></li>
+                        <li><a th:href="@{/users/products}">Products</a></li>
 
                     </ul>
                 </div>
@@ -774,17 +804,17 @@
             </header>
             <div class="nav-linkshamro" style="position: absolute; left: 200px; top: 100px;">
                 <ul class="main-menu">
-                    <li><a th:href="@{/products/Men}" style="color: black;">Men</a>
+                    <li><a th:href="@{/users/products/Men}" style="color: black;">Men</a>
                     </li>
 
-                    <li><a th:href="@{/products/Women}" style="color: black;">Women</a>
+                    <li><a th:href="@{/users/products/Women}" style="color: black;">Women</a>
                     </li>
 
                 </ul>
             </div>
 
             <div class="search-box">
-                <form action="" method="get" id="myForm"
+                <form th:action="@{/users/products/}" method="get" id="myForm"
                     style=" width: 500px;position: relative;display: flex;bottom: 0;left: 0;right: 0;margin: 20px auto;">
 
                     <input class="search-input" type="text" placeholder="Search for your products" name="productName"

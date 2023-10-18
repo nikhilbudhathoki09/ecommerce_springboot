@@ -18,6 +18,7 @@ public class Brand {
     private String brand_name;
 
     private String brand_image;
+    
 
 
     public Brand(){}
@@ -63,7 +64,6 @@ public class Brand {
     public void setBrand_image(String brand_image) {
         this.brand_image = brand_image;
     }
-
 
     @Override
     public String toString() {
